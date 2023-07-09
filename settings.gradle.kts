@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = "alloba-mono"
-//include("app")
+include("example-app")
