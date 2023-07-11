@@ -12,5 +12,8 @@
 **/site/public
 **/.hugo_build.lock
 
+#Node
+**/node_modules/
+
 # Misc
 **/.DS_Store
