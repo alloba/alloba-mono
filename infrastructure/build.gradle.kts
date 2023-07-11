@@ -9,3 +9,15 @@ tasks.register("terraformValidate") {
         }
     }
 }
+
+tasks.register("terraformApply"){
+    group = "Infrastructure"
+    description = "Deploy terraform project."
+
+    doLast {
+        exec {
+            workingDir = File(project.projectDir.path)
+            commandLine("terraform", "apply", "--auto-approve")
+        }
+    }
+}
