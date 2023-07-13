@@ -1,4 +1,4 @@
-tasks.register("terraformValidate") {
+val validateTask by tasks.register("terraformValidate") {
     group = "Infrastructure"
     description = "Validate all terraform infrastructure in place within the repo."
 
@@ -20,4 +20,8 @@ tasks.register("terraformApply"){
             commandLine("terraform", "apply", "--auto-approve")
         }
     }
+}
+
+tasks.register<MonorepoValidation>("ValidateInfrastructure") {
+    supportingTask = validateTask
 }

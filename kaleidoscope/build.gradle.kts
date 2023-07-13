@@ -13,8 +13,11 @@ node {
 
 val installProject by tasks.register<NpmInstallTask>("installKaleidoscope")
 
-tasks.register<NpxTask>("buildKaleidoscope"){
-  dependsOn(installProject)
+val buildProject by tasks.register<NpxTask>("buildKaleidoscope"){
   command = "ng"
   args = listOf("build", "--prod")
+}
+
+tasks.register<MonorepoValidation>("ValidateKaleidoscope") {
+  supportingTask = buildProject
 }

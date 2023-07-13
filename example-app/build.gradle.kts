@@ -37,3 +37,7 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.register<MonorepoValidation>("ValidateExampleApp") {
+    supportingTask = tasks.build.get()
+}
