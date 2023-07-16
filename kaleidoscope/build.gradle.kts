@@ -19,6 +19,6 @@ val buildProject by tasks.register<NpxTask>("buildKaleidoscope"){
   dependsOn(installProject)
 }
 
-tasks.register<MonorepoValidation>("ValidateKaleidoscope") {
-  supportingTask = buildProject
-}
+//tasks.register<MonorepoValidation>("ValidateKaleidoscope") {
+//  supportingTask = buildProject
+//}

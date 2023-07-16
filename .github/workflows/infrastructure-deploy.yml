@@ -18,13 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
 
-      - name: Terraform Init
-        working-directory: terraform
-        run: terraform init
-
-      - name: Apply Terraform
-        working-directory: terraform
-        run: terraform apply --auto-approve
+      - name: Gradle Run Infrastructure Task
+        run: ./gradlew terraformApply

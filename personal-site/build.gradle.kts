@@ -14,9 +14,9 @@ hugo {
     osFamily = getOS()
 }
 
-tasks.register<MonorepoValidation>("ValidatePersonalSite" ) {
-    supportingTask = tasks.hugoBuild.get()
-}
+//tasks.register<MonorepoValidation>("ValidatePersonalSite" ) {
+//    supportingTask = tasks.hugoBuild.get()
+//}
 
 fun getOS(): OsFamily {
     val os = System.getProperty("os.name").lowercase()

@@ -10,6 +10,14 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.4.0"
 }
 
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("build") {
+            plugin("terraform", "org.ysb33r.terraform").version("1.0.1")
+        }
+    }
+}
+
 rootProject.name = "alloba-mono"
 
-include("infrastructure", "personal-site", "kaleidoscope")
+include("infrastructure", "personal-site")//, "kaleidoscope")

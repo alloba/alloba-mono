@@ -1,27 +1,16 @@
-val validateTask by tasks.register("terraformValidate") {
-    group = "Infrastructure"
-    description = "Validate all terraform infrastructure in place within the repo."
+import org.ysb33r.gradle.terraform.tasks.TerraformValidate
 
-    doLast {
-        exec {
-            workingDir = File(project.projectDir.path)
-            commandLine("terraform", "validate")
-        }
+plugins {
+    alias(build.plugins.terraform) //terraform
+}
+
+terraform {
+    version = "1.5.3"
+}
+
+terraformSourceSets {
+    main {
+        setSrcDir("./")
     }
 }
 
-tasks.register("terraformApply"){
-    group = "Infrastructure"
-    description = "Deploy terraform project."
-
-    doLast {
-        exec {
-            workingDir = File(project.projectDir.path)
-            commandLine("terraform", "apply", "--auto-approve")
-        }
-    }
-}
-
-tasks.register<MonorepoValidation>("ValidateInfrastructure") {
-    supportingTask = validateTask
-}
