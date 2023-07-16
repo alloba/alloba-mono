@@ -6,6 +6,7 @@ plugins {
 
 terraform {
     version = "1.5.3"
+    useAwsEnvironment()
 }
 
 terraformSourceSets {
