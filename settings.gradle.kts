@@ -12,4 +12,4 @@ plugins {
 
 rootProject.name = "alloba-mono"
 
-include("infrastructure", "personal-site", "example-app", "kaleidoscope")
+include("infrastructure", "personal-site", "kaleidoscope")
