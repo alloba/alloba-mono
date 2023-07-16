@@ -1,3 +1,5 @@
+//TODO: adding terraform to gradle was such a massive pain... is it really worth it? maybe just use terraform separately...
+
 plugins {
     alias(build.plugins.terraform) //terraform
 }
@@ -9,7 +11,7 @@ terraform {
 
 terraformSourceSets {
     main {
-        setSrcDir("./")
+        setSrcDir("./") //override default src/tf directory.
     }
 }
 
