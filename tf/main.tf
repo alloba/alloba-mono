@@ -28,7 +28,7 @@ module "central-dns" {
 }
 
 module "personal-site" {
-  source = "./cloudfront-s3-site"
+  source = "./modules/cloudfront-s3-site"
 
   acm_certificate_domain = "alexlbates.com"
   cloudfront_distribution_description = "Main landing site for my online presence."
@@ -38,7 +38,7 @@ module "personal-site" {
 }
 
 module "kaleidoscope-site" {
-  source = "./cloudfront-s3-site"
+  source = "./modules/cloudfront-s3-site"
   acm_certificate_domain = "alexlbates.com"
   cloudfront_distribution_description = "Kaleidoscope Site"
   route_53_record_names = ["kaleidoscope.alexlbates.com"]
