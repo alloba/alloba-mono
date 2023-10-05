@@ -22,10 +22,10 @@ jobs:
         uses: hashicorp/setup-terraform@v1
 
       - name: Terraform Init
-        working-directory: terraform
+        working-directory: tf
         run: terraform init
 
       - name: Apply Terraform
-        working-directory: terraform
+        working-directory: tf
         run: terraform apply --auto-approve
 
