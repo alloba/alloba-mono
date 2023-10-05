@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'src/tf/**'
+      - 'tf/**'
 jobs:
   TerraformDeploy:
     environment: main_env
