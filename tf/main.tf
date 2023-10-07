@@ -22,11 +22,6 @@ provider "aws" {
   }
 }
 
-module "central-dns" {
-  source = "./central-dns"
-  route_53_zone_name = "alexlbates.com"
-}
-
 module "personal-site" {
   source = "./modules/cloudfront-s3-site"
 
