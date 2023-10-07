@@ -1,0 +1,14 @@
+name: Deploy Central DNS
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'tf/**'
+
+jobs:
+  terraform-deploy:
+    uses: './.github/workflows/infrastructure-deploy.yml'
+    with:
+      target-dir: './tf/central-dns'

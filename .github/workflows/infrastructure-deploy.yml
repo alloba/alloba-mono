@@ -1,11 +1,11 @@
-name: Deploy Infrastructure
+name: Deploy Terraform Infrastructure
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'tf/**'
+  workflow_call:
+    inputs:
+      target-dir:
+        required: true
+        type: string
+
 jobs:
   TerraformDeploy:
     environment: main_env
@@ -22,10 +22,9 @@ jobs:
         uses: hashicorp/setup-terraform@v1
 
       - name: Terraform Init
-        working-directory: tf
+        working-directory: ${{ inputs.target-dir }}
         run: terraform init
 
       - name: Apply Terraform
-        working-directory: tf
+        working-directory: ${{ inputs.target-dir }}
         run: terraform apply --auto-approve
-
