@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'tf/kaleidoscope'
-      - '.github/workflows/infrastructure.personal-landing-site.yml'
+      - '.github/workflows/infrastructure.kaleidoscope.yml'
 
 jobs:
   terraform-deploy:
