@@ -10,7 +10,7 @@ on:
 
 jobs:
   terraform-deploy:
-    uses: './.github/workflows/shared-infrastructure-deploy.yml'
+    uses: './.github/workflows/shared-terraform-deploy.yml'
     with:
       target-dir: './tf/kaleidoscope'
     secrets:
