@@ -5,6 +5,13 @@ on:
       target-dir:
         required: true
         type: string
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      AWS_REGION:
+        required: true
 
 jobs:
   TerraformDeploy:
@@ -22,7 +29,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
 
       - name: Terraform Init
-        working-directory: ${{ inputs.target-dir }}
+        working-directory: ${{ inputs.target-dir   }}
         run: terraform init
 
       - name: Apply Terraform
