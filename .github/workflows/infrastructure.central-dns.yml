@@ -6,11 +6,11 @@ on:
       - main
     paths:
       - 'tf/central-dns'
-      - '.github/workflows/central-dns.yml'
+      - '.github/workflows/infrastructure.central-dns.yml'
 
 jobs:
   terraform-deploy:
-    uses: './.github/workflows/shared-terraform-deploy.yml'
+    uses: './.github/workflows/shared.terraform-deploy.yml'
     with:
       target-dir: './tf/central-dns'
     secrets:

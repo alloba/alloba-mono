@@ -1,18 +1,18 @@
-name: Deploy Personal Site Infra
+name: Deploy Kaleidoscope Infra
 on:
   workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - 'tf/personal-landing-site'
-      - '.github/workflows/personal-landing-site.yml'
+      - 'tf/kaleidoscope'
+      - '.github/workflows/infrastructure.personal-landing-site.yml'
 
 jobs:
   terraform-deploy:
-    uses: './.github/workflows/shared-terraform-deploy.yml'
+    uses: './.github/workflows/shared.terraform-deploy.yml'
     with:
-      target-dir: './tf/personal-landing-site'
+      target-dir: './tf/kaleidoscope'
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
