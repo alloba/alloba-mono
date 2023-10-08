@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'kaleidoscope/'
+      - 'kaleidoscope'
       - '.github/workflows/kaleidoscope.yml'
 
 jobs:
