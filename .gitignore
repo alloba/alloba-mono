@@ -13,6 +13,7 @@
 #Node
 **/node_modules/
 **/.angular
+kaleidoscope/dist/*
 
 # Misc
 **/.DS_Store

@@ -35,4 +35,4 @@ jobs:
         run: npm run build:prod
 
       - name: Deploy
-        run: aws s3 sync dist/kaleidoscope-frontend s3://kaleidoscope.alexlbates.com --delete
+        run: aws s3 sync dist/kaleidoscope s3://kaleidoscope.alexlbates.com --delete
